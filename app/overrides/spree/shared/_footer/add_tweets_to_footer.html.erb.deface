@@ -1,0 +1,14 @@
+<!-- insert_top 'section#bottom' -->
+<section id="latest-tweets">
+	<h2><%= t("twitter.testimonials") %></h2>
+	<div class="tweet">
+	  <ul class="tweet_list">
+      <% Spree::TwitterTestimony.latest.each do |testimony| %>
+        <li class='<%= cycle("tweet_odd", "tweet_even") -%>'>
+          <span class="tweet_join"><%= link_to testimony.author_name, "https://twitter.com/#{testimony.twitter_handle}" %> <%= t("twitter.said") %>,</span>
+          <span class="tweet_text"><%= testimony.content %></span>
+        </li>
+      <% end %>
+	  </ul>
+	</div>
+</section>
