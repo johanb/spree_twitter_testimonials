@@ -1,3 +1,5 @@
+require 'twitter'
+require 'twitter-text'
 module SpreeTwitterTestimonials
   class Engine < Rails::Engine
     require 'spree/core'
