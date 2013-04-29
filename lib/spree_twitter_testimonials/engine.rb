@@ -6,9 +6,9 @@ module SpreeTwitterTestimonials
     isolate_namespace Spree
     engine_name 'spree_twitter_testimonials'
 
-    ActionController::Base.send(:helper, SpreeTwitterTestimonials::TwitterHelper)
-
     config.autoload_paths += %W(#{config.root}/lib)
+    
+    ActionController::Base.send(:helper, Twitter::Autolink)
 
     # use rspec for tests
     config.generators do |g|
