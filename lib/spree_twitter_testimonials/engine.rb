@@ -6,11 +6,7 @@ module SpreeTwitterTestimonials
     isolate_namespace Spree
     engine_name 'spree_twitter_testimonials'
 
-    initializer 'spree_twitter_testimonials.action_controller' do |app|
-      ActiveSupport.on_load :action_controller do
-        helper SpreeTwitterTestimonials::TwitterHelper
-      end
-    end
+    ActionController::Base.send(:helper, SpreeTwitterTestimonials::TwitterHelper)
 
     config.autoload_paths += %W(#{config.root}/lib)
 
